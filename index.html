@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Yahan CSS ka code aa gaya */
+        body { background-color: #f4f4f4; font-family: Arial, sans-serif; }
+        .container { background-color: white; max-width: 400px; margin: 50px auto; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; }
+        input { width: 70%; padding: 10px; }
+        button { padding: 10px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        ul { list-style: none; padding: 0; margin-top: 20px; }
+        li { padding: 10px; border-bottom: 1px solid #ddd; }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -10,6 +19,19 @@
         <button onclick="addTask()">Add</button>
         <ul id="taskList"></ul>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        /* Yahan JS ka code aa gaya */
+        function addTask() {
+            let input = document.getElementById("taskInput");
+            let taskValue = input.value;
+            if (taskValue === "") { alert("Kuch toh likho!"); return; }
+            let ul = document.getElementById("taskList");
+            let li = document.createElement("li");
+            li.textContent = taskValue;
+            ul.appendChild(li);
+            input.value = "";
+        }
+    </script>
 </body>
 </html>
